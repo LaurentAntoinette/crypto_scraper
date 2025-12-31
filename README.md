@@ -8,7 +8,7 @@ Ce projet a pour objectif de surveiller  la valeur des cryptomonnaies, effectuer
 ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-3.0.4-greeb)
 
 ## Préparation de l'environnement
-### Installer Apache Airflow
+### Installer Apache Airflow (optionnel : pour dev hors docker)
 1. Créer et accéder à un environnement virtuel avec cette commande.   
 ```
 python3 -m venv airflow_venv
@@ -26,7 +26,5 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" \
  ```
  airflow version
  ```
-4. Exécuter ses deux commandes bash
-````
-export AIRFLOW_HOME=~airflow
-pip install apache-airflow==3.0.4
+### Activer le webserver sur Docker
+Il suffira d'executer la commande bash `docker-compose up -d` depuis la racine du projet, et aller à ce lien http://localhost:8080/home avec ces identifiants `airflow:airflow`.  
