@@ -1,15 +1,24 @@
 -- Initialization script for PostgreSQL database for crypto_scraper
 -- This script creates the necessary schema and tables for storing wallet information,
 -- transaction history, and currency value history.
-CREATE SCHEMA crypto_scraper;
+
+-- Create the database, user and schema
+CREATE DATABASE airflow_db;
+
+-- CREATE USER airflow WITH PASSWORD 'airflow'; //Pas nécessaire car créé par défaut à l'initialisation
+GRANT ALL PRIVILEGES ON DATABASE airflow_db TO airflow;
+
+\c airflow_db;
+
+CREATE SCHEMA crypto_scraper AUTHORIZATION airflow;
 
 -- Table to store wallet informations
 CREATE TABLE crypto_scraper.crypto_wallet (
     currency VARCHAR(7) PRIMARY KEY,
-    balence DECIMAL(20, 10),
+    balance DECIMAL(20, 10),
     last_updated TIMESTAMP,
-    available_balence DECIMAL(20, 10),
-    hold_balence DECIMAL(20, 10)
+    available_balance DECIMAL(20, 10),
+    hold_balance DECIMAL(20, 10)
 );
 
 -- Enum type for transaction side
