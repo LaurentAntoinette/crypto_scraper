@@ -5,7 +5,7 @@ Ce projet a pour objectif de surveiller  la valeur des cryptomonnaies, effectuer
 ![Python](https://img.shields.io/badge/Python-3.9-yellow)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13-blue)
 ![Docker](https://img.shields.io/badge/Docker-28.3.2-blue)
-![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-3.0.4-greeb)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.10.2-greeb)
 
 ## Préparation de l'environnement
 ### Installer Apache Airflow (optionnel : pour dev hors docker)
@@ -41,6 +41,6 @@ Note :
 
 Il suffira d'executer sur docker depuis la racine du projet la commande : 
 ```bash
-docker-compose up -d
+make docker-compose
 ``` 
 Puis aller à ce lien http://localhost:8080/home avec les identifiants `airflow:airflow`.  
